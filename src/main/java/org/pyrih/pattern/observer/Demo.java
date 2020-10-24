@@ -18,6 +18,10 @@ public class Demo {
 
         youtubeChannel.releaseNewVideo("Design Patterns: Singleton");
         youtubeChannel.releaseNewVideo("Design Patterns: Builder");
+
+        youtubeChannel.removeObserver(dSubscriber);
+        youtubeChannel.removeObserver(eSubscriber);
+
         youtubeChannel.releaseNewVideo("Design Patterns: Observer");
     }
 }
