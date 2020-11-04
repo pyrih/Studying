@@ -16,13 +16,15 @@ public class ArrayQueueImpl {
         if(size == items.length)
             throw new IllegalStateException();
 
-        items[rear++] = item;
+        items[rear] = item;
+        rear = (rear + 1) % items.length;
         size++;
     }
 
     public int dequeue() {
         int item = items[front];
-        items[front++] = 0;
+        items[front] = 0;
+        front = (front + 1) % items.length;
         size--;
         return item;
     }
