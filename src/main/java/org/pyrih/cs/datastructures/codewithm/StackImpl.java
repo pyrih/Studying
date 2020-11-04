@@ -14,23 +14,23 @@ public class StackImpl {
     }
 
     public int pop() {
-         return items[--size];
+        return items[--size];
     }
 
     public int peek() {
-         if (size == 0) {
-              throw new IllegalStateException();
-         }
-         return items[size - 1];
+        if (size == 0) {
+            throw new IllegalStateException();
+        }
+        return items[size - 1];
     }
 
     public boolean isEmpty() {
-         return size == 0;
+        return size == 0;
     }
 
     @Override
     public String toString() {
-         int[] ints = Arrays.copyOfRange(items, 0, size);
-         return Arrays.toString(ints);
+        int[] ints = Arrays.copyOfRange(items, 0, size);
+        return Arrays.toString(ints);
     }
 }
