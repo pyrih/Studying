@@ -25,10 +25,26 @@ public class FilterExample {
                 .collect(Collectors.toList());
         System.out.println(students1);
 
-        Stream<Student> stream = Stream.of(a, b, c, d, e);
-        stream.filter(elem -> elem.course > 3)
+        Stream<Student> stream1 = Stream.of(a, b, c, d, e);
+        List<Student> collect = stream1.filter(elem -> elem.course > 3)
                 .collect(Collectors.toList());
+        System.out.println(collect);
 
+        Stream<Student> stream2 = Stream.of(a, b, c, d, e);
+        List<Student> list = stream2
+                .sorted((x, y) -> x.name.compareTo(y.name))
+                .collect(Collectors.toList());
+        System.out.println(list);
+
+        Stream<Student> stream3 = Stream.of(a, b, c, d, e);
+        stream3
+                .map(student -> {
+                    student.name = student.name.toUpperCase();
+                    return student;
+                })
+                .filter(student -> student.sex.equals("F"))
+                .sorted((x, y) -> x.age - y.age)
+                .forEach(System.out::println);
     }
 }
 
