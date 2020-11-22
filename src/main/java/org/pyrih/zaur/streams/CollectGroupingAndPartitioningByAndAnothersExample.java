@@ -81,6 +81,9 @@ public class CollectGroupingAndPartitioningByAndAnothersExample {
 
         System.out.println("---------------------------------------");
 
-
+        int sum = students.stream().mapToInt(value -> value.course).sum();
+        double asDouble = students.stream().mapToInt(value -> value.course).average().getAsDouble();
+        int minAsInt = students.stream().mapToInt(value -> value.course).min().getAsInt();
+        int maxAsInt = students.stream().mapToInt(value -> value.course).max().getAsInt();
     }
 }
