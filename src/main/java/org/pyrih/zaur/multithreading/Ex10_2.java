@@ -19,9 +19,20 @@ class Counter {
 }
 
 class Runner implements Runnable {
-    public synchronized void increment() {
+
+/*    public synchronized void increment() {
         Counter.count++;
         System.out.print(Counter.count + " ");
+    }*/
+
+    // or
+
+    public void increment() {
+        synchronized (this) {
+            Counter.count++;
+            System.out.println(Counter.count);
+        }
+
     }
 
     @Override
