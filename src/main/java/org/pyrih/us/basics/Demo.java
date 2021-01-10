@@ -21,7 +21,7 @@ public class Demo {
         anonymousPrinter.print("Hi from anonymous class!");
         System.out.println();
 
-        Printer lambdaPrinter = message -> System.out.println(message);
+        Printer lambdaPrinter = System.out::println;
         lambdaPrinter.print("Hi from lambda!");
         System.out.println();
 
@@ -49,7 +49,7 @@ public class Demo {
         }
         System.out.println();
 
-        names.stream().forEach(s -> System.out.println(s));
+        names.forEach(System.out::println);
         System.out.println();
 
         // 2
@@ -63,7 +63,7 @@ public class Demo {
         names
                 .stream()
                 .filter(s -> s.startsWith("J"))
-                .forEach(s -> System.out.println(s));
+                .forEach(System.out::println);
         System.out.println();
 
         // 3
